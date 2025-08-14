@@ -63,3 +63,48 @@ productos.forEach((producto, index) => {
 });
 console.log('------------------------------------------------------------------------');  
 
+/*
+4. Manipulacion de Arrays
+*/
+console.log('------------------4. Manipulación de Arrays---------------------');
+
+// 1. Agregar dos elementos al final
+productos.push(
+  { id: 6, nombre: "Regla", precio: 500, stock: 15 },
+  { id: 7, nombre: "Marcadores", precio: 800, stock: 12 }
+);
+console.log("Después de push:", productos);
+
+// 2. Eliminar el ultimo elemento
+productos.pop();
+console.log("Después de pop:", productos);
+
+// 3. Agregar un nuevo elemento al inicio
+productos.unshift({ id: 8, nombre: "Pegamento", precio: 350, stock: 9 });
+console.log("Después de unshift:", productos);
+
+// 4. Eliminar el primer elemento
+productos.shift();
+console.log("Después de shift:", productos);
+
+// 5. Array con stock mayor a 0
+let productosConStock = productos.filter(prod => prod.stock > 0);
+console.log("Productos con stock > 0:", productosConStock);
+
+// 6. Array con solo nombres
+let nombresProductos = productos.map(prod => prod.nombre);
+console.log("Nombres de productos:", nombresProductos);
+
+// 7. Buscar producto por ID = 3
+let productoId3 = productos.find(prod => prod.id === 3);
+if (productoId3) {
+  console.log("Producto con ID 3 encontrado:", productoId3);
+} else {
+  console.log("No se encontro un producto con ID 3");
+}
+
+// 8. Ordenar por precio descendente
+let productosOrdenados = [...productos].sort((a, b) => b.precio - a.precio);
+console.log("Productos ordenados por precio (desc):", productosOrdenados);
+
+console.log('------------------------------------------------------------------------');
